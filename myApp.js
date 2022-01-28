@@ -10,6 +10,11 @@ app.get("/", (req, res) => {
 
 app.get("/json", (req, res) => {
     
+    res.json({
+        "cwd": process.cwd(),
+        "dir": __dirname
+    });
+    
     const tmp = {"message": "Hello json"}
     if(process.env.MESSAGE_STYLE === 'uppercase'){
         tmp.message = tmp.message.toUpperCase();
